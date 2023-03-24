@@ -1,0 +1,8 @@
+# 邮件服务器的SMTP地址，可选，默认为smtp.<发件人邮箱后缀>
+host = mail.yumchina.com
+# 邮件服务器的SMTP端口，可选，默认25
+port = 25
+# 发件人（必须正确，否则发送失败）
+from = ITSecurityService.China@YumChina.com
+# 用户名，默认为发件人邮箱前缀
+user = ITSecurityService.China

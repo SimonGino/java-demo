@@ -1,6 +1,8 @@
 package com.example.demo.sendmail.controller;
 
 
+import cn.hutool.core.convert.Convert;
+import cn.hutool.core.util.StrUtil;
 import com.example.demo.sendmail.service.MailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
