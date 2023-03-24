@@ -20,9 +20,10 @@ public class PowerPointGenerator {
         // 获取每个幻灯片
         for (XSLFSlide slide : slides) {
             // 获取幻灯片上的形状
-            for (XSLFShape shape : slide.getShapes()) {
+            for (int i = 0; i < slide.getShapes().size(); i++) {
+                XSLFShape shape = slide.getShapes().get(i);
                 // 查找表格形状
-                if (shape instanceof XSLFTable) {
+                if (shape instanceof XSLFTable && i == 0) {
                     XSLFTable table = (XSLFTable) shape;
                     // 填充表格
                     table.getCell(0, 0).setText("Name");
@@ -31,6 +32,32 @@ public class PowerPointGenerator {
                     table.getCell(0, 1).setText("John");
                     table.getCell(1, 1).setText("User");
                     table.getCell(2, 1).setText("Hatchback, Blue, License Plate #ABC123");
+                } else if (shape instanceof XSLFTable && i == 1) {
+                    XSLFTable table = (XSLFTable) shape;
+                    // 填充表格
+                    table.getCell(0, 0).setText("Rank");
+                    table.getCell(1, 0).setText("第二行");
+                    table.getCell(2, 0).setText("第三行");
+                    table.getCell(0, 1).setText("C");
+                    table.getCell(1, 1).setText("第二行value");
+                    table.getCell(2, 1).setText("第三行答案");
+                    table.getCell(3, 0).setText("第四行");
+                    table.getCell(3, 1).setText("第四行答案");
+                } else {
+                    XSLFTable table = (XSLFTable) shape;
+                    // 填充表格
+                    table.getCell(0, 0).setText("Others");
+                    table.getCell(1, 0).setText("第二行");
+                    table.getCell(2, 0).setText("第三行");
+                    table.getCell(0, 1).setText("");
+                    table.getCell(1, 1).setText("第二行value");
+                    table.getCell(2, 1).setText("第三行答案");
+                    table.getCell(3, 0).setText("第四行");
+                    table.getCell(3, 1).setText("第四行答案");
+                    table.getCell(4, 0).setText("第五行");
+                    table.getCell(4, 1).setText("第五行答案");
+                    table.getCell(5, 0).setText("第六行");
+                    table.getCell(5, 1).setText("第六行答案");
                 }
             }
         }
